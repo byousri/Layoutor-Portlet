@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head />
+	<h:body>
+		<h:form id="f1" enctype="multipart/form-data" prependId="false">
+
+
+			<h3>#{i18n['attachments']}</h3>
+			
+			<p:fileUpload fileUploadListener="#{layoutorBean.handleFileUpload}"
+			mode="advanced" dragDropSupport="true"
+            update="messages" sizeLimit="100000" allowTypes="/(\.|\/)(csv)$/" />
+            
+			<p:growl id="messages" showDetail="true"/>
+
+		</h:form>
+	</h:body>
+</f:view>
